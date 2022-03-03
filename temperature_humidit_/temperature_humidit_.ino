@@ -21,14 +21,13 @@ void setup() {
 void loop() {
   // read the input on analog pin 0:
   int sensorValue = analogRead(A0);
-  int sensor2Valeu = analogRead(A1);
-  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
-  float voltage = sensorValue * (5.0 / 1024.0);
-  float temperature = voltage *100;
-  // print out the value you read:
-  Serial.print("Voltage : ");
-  Serial.println(voltage);
-  Serial.print("Temperature : ");
+  float temperature = sensorValue*(5.0/1023.0)*100;
+  delay(200);
+  int sensor2Value = analogRead(A1);
+  //float temperature = sensor2Value;
+  Serial.print("a0 : ");
+  Serial.print(sensorValue);
+  Serial.print(" a1 : ");
   Serial.println(temperature);
   delay(1000);
 }
